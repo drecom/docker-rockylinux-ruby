@@ -6,7 +6,7 @@ FROM rockylinux:9 AS rubybuild
 ARG RUBY_PATH
 ARG RUBY_VERSION
 ARG RUBY_CONFIGURE_OPTS
-RUN yum -y install git autoconf gcc make zlib-devel perl-core perl-IPC-Cmd
+RUN yum -y install git autoconf gcc make zlib-devel perl-core perl-IPC-Cmd bzip2
 RUN git clone https://github.com/jemalloc/jemalloc.git
 RUN cd jemalloc/ && ./autogen.sh && ./configure && make && make install && cd ../ && rm -rf jemalloc/
 RUN git clone https://github.com/rbenv/ruby-build.git $RUBY_PATH/plugins/ruby-build \
