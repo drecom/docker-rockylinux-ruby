@@ -1,5 +1,5 @@
 ARG RUBY_PATH=/usr/local
-ARG RUBY_VERSION=3.1.0
+ARG RUBY_VERSION=2.6.10
 ARG RUBY_CONFIGURE_OPTS=--with-jemalloc
 
 FROM rockylinux:9 AS rubybuild
