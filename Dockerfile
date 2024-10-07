@@ -13,7 +13,7 @@ RUN git clone https://github.com/rbenv/ruby-build.git $RUBY_PATH/plugins/ruby-bu
 &&  $RUBY_PATH/plugins/ruby-build/install.sh
 RUN yum -y install \
          openssl-devel
-RUN LD_LIBRARY_PATH=/usr/local/lib RUBY_CONFIGURE_OPTS=$RUBY_CONFIGURE_OPTS ruby-build $RUBY_VERSION $RUBY_PATH/
+RUN LD_LIBRARY_PATH=/usr/local/lib RUBY_CONFIGURE_OPTS=$RUBY_CONFIGURE_OPTS ruby-build $RUBY_VERSION $RUBY_PATH
 
 FROM rockylinux:9
 ARG RUBY_PATH
