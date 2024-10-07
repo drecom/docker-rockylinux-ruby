@@ -37,5 +37,5 @@ RUN cd jemalloc/ && ./autogen.sh && ./configure && make && make install && cd ..
 
 COPY --from=rubybuild $RUBY_PATH $RUBY_PATH
 
-RUN gem update --system
+RUN gem update --system 3.4.22
 CMD [ "irb" ]
