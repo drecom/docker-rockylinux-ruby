@@ -16,7 +16,9 @@ RUN yum -y install \
         zlib-devel \
         openssl-devel \
         libffi-devel \
-        libxslt-devel \
+        libxslt-devel
+RUN dnf config-manager --set-enabled crb
+RUN yum -y install \
         mysql-devel \
         ImageMagick-devel
 RUN git clone https://github.com/jemalloc/jemalloc.git
