@@ -1,5 +1,5 @@
 ARG RUBY_PATH=/usr/local
-ARG RUBY_VERSION=2.6.10
+ARG RUBY_VERSION=2.5.3
 ARG RUBY_CONFIGURE_OPTS=--with-jemalloc
 
 FROM rockylinux:9 AS rubybuild
@@ -51,5 +51,5 @@ RUN cd jemalloc/ && ./autogen.sh && ./configure && make && make install && cd ..
 
 COPY --from=rubybuild $RUBY_PATH $RUBY_PATH
 
-RUN gem update --system 3.4.22
+RUN gem update --system 3.3.27
 CMD [ "irb" ]
